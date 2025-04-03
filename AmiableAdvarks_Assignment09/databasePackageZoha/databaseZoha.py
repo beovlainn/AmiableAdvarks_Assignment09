@@ -1,4 +1,4 @@
-# file name: databaseZoha
+# file name: databaseZoha.py
 # Student Name: Zoha Iqbal
 # email: iqbalza@mail.uc.edu
 # Assignment Number: Assignment 09
@@ -13,8 +13,14 @@
 import random
 
 def fetch_products(cursor):
+    """
+    Retrieves all products from the tProduct table.
+    """
     cursor.execute("SELECT ProductID, [UPC-A], Description, ManufacturerID, BrandID FROM tProduct")
     return cursor.fetchall()
 
 def select_random_product(products):
+    """
+    Selects a random product from a list of products.
+    """
     return random.choice(products)
